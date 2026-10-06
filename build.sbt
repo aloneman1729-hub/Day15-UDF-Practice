@@ -23,5 +23,11 @@ lazy val root = (project in file("."))
     Test / javaOptions ++= Seq(
       "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
       "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED"
+    ),
+
+    Test / scalaSource := baseDirectory.value / "src/test/scala",
+
+    Test / unmanagedSourceDirectories := Seq(
+      baseDirectory.value / "src/test/scala"
     )
   )
